@@ -322,6 +322,8 @@ y/50
 )
 );
 
+console.log("moveY =", moveY);
+  
 stick.style.left =
 (40+x)+"px";
 
