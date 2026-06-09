@@ -38,6 +38,7 @@ true;
 document.body.appendChild(
 renderer.domElement
 );
+console.log("Renderer OK");
 
 const ambient =
 new THREE.AmbientLight(
@@ -751,6 +752,8 @@ camera
 );
 
 }
+
+console.log("Animate start");
 
 animate();
 
