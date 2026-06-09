@@ -174,7 +174,7 @@ createWall(-10,10);
 
 let hp = 100;
 let ammo = 30;
-let reserveAmmo = 9000;
+let reserveAmmo = 900;
 let kills = 0;
 
 let yaw = 0;
