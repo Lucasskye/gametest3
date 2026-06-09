@@ -304,7 +304,7 @@ e.touches[0].clientY -
 rect.top - 70;
 
 moveX =
-Math.max(
+-Math.max(
 -1,
 Math.min(
 1,
@@ -313,7 +313,7 @@ x/50
 );
 
 moveY =
-Math.max(
+-Math.max(
 -1,
 Math.min(
 1,
