@@ -304,7 +304,7 @@ e.touches[0].clientY -
 rect.top - 70;
 
 moveX =
--Math.max(
+Math.max(
 -1,
 Math.min(
 1,
@@ -332,20 +332,41 @@ stick.style.top =
 
 let lastX = null;
 let lastY = null;
+let looking = false;
+
+document.addEventListener(
+"touchstart",
+e=>{
+
+if(
+e.target===joystick ||
+e.target===stick ||
+e.target===fireBtn ||
+e.target===scopeBtn ||
+e.target===reloadBtn
+){
+return;
+}
+
+looking = true;
+
+lastX =
+e.touches[0].clientX;
+
+lastY =
+e.touches[0].clientY;
+
+}
+);
 
 document.addEventListener(
 "touchmove",
 e=>{
 
-if(
-e.target===joystick ||
-e.target===stick
-)return;
+if(!looking) return;
 
 const t =
 e.touches[0];
-
-if(lastX!==null){
 
 yaw -=
 (t.clientX-lastX)
@@ -364,8 +385,6 @@ pitch
 )
 );
 
-}
-
 lastX =
 t.clientX;
 
@@ -378,6 +397,8 @@ t.clientY;
 document.addEventListener(
 "touchend",
 ()=>{
+
+looking = false;
 
 lastX = null;
 lastY = null;
