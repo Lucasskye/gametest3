@@ -680,21 +680,19 @@ pitch - recoil;
 
 recoil *= 0.85;
 
-camera.position.x +=
-Math.sin(yaw)
-*(-moveY)
-*0.08;
-
-camera.position.z +=
-Math.cos(yaw)
-*(-moveY)
-*0.08;
+const speed = 0.08;
 
 camera.position.x +=
-Math.sin(yaw + Math.PI/2) * moveX * 0,5;
+Math.sin(yaw) * moveY * 0,8;
 
 camera.position.z +=
-Math.cos(yaw + Math.PI/2) * moveX * 0,5;
+Math.cos(yaw) * moveY * 0,8;
+
+camera.position.x +=
+Math.sin(yaw + Math.PI/2) * moveX * speed;
+
+camera.position.z +=
+Math.cos(yaw + Math.PI/2) * moveX * speed;
 
 for(const enemy of enemies){
 
