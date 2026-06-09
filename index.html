@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<title>Mobile FPS 3D</title>
+
+<style>
+html,body{
+margin:0;
+padding:0;
+overflow:hidden;
+background:#000;
+touch-action:none;
+font-family:Arial,sans-serif;
+}
+
+#hud{
+position:fixed;
+top:10px;
+left:10px;
+color:white;
+z-index:100;
+font-size:18px;
+}
+
+#crosshair{
+position:fixed;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+color:white;
+font-size:32px;
+z-index:100;
+pointer-events:none;
+}
+
+#joystick{
+position:fixed;
+left:20px;
+bottom:20px;
+width:140px;
+height:140px;
+border-radius:50%;
+background:rgba(255,255,255,.15);
+z-index:100;
+}
+
+#stick{
+position:absolute;
+width:60px;
+height:60px;
+left:40px;
+top:40px;
+border-radius:50%;
+background:white;
+}
+
+#fire{
+position:fixed;
+right:20px;
+bottom:60px;
+width:90px;
+height:90px;
+border-radius:50%;
+background:rgba(255,0,0,.4);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+font-weight:bold;
+z-index:100;
+}
+
+#scope{
+position:fixed;
+right:130px;
+bottom:90px;
+width:70px;
+height:70px;
+border-radius:50%;
+background:rgba(0,120,255,.4);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:100;
+}
+</style>
+</head>
+
+<body>
+
+<div id="hud">
+HP: 100<br>
+Ammo: 30/90<br>
+Kills: 0
+</div>
+
+<div id="crosshair">+</div>
+
+<div id="joystick">
+<div id="stick"></div>
+</div>
+
+<div id="scope">ZOOM</div>
+<div id="fire">FIRE</div>
+
+<script type="module">
+import * as THREE from
+"https://unpkg.com/three@0.160.0/build/three.module.js";
