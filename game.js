@@ -174,7 +174,7 @@ createWall(-10,10);
 
 let hp = 100;
 let ammo = 30;
-let reserveAmmo = 90;
+let reserveAmmo = 9000;
 let kills = 0;
 
 let yaw = 0;
@@ -690,18 +690,10 @@ Math.cos(yaw)
 *0.08;
 
 camera.position.x +=
-Math.sin(
-yaw+Math.PI/2
-)
-*(-moveX)
-*0.05;
+Math.sin(yaw + Math.PI/2) * moveX * speed;
 
 camera.position.z +=
-Math.cos(
-yaw+Math.PI/2
-)
-*(-moveX)
-*0.05;
+Math.cos(yaw + Math.PI/2) * moveX * speed;
 
 for(const enemy of enemies){
 
