@@ -682,12 +682,14 @@ recoil *= 0.85;
 
 const speed = 0.08;
 
+// Maju mundur
 camera.position.x +=
-Math.sin(yaw) * moveY * 0,8;
+Math.sin(yaw) * moveY * speed;
 
 camera.position.z +=
-Math.cos(yaw) * moveY * 0,8;
+Math.cos(yaw) * moveY * speed;
 
+// Kiri kanan
 camera.position.x +=
 Math.sin(yaw + Math.PI/2) * moveX * speed;
 
