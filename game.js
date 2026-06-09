@@ -690,10 +690,10 @@ Math.cos(yaw)
 *0.08;
 
 camera.position.x +=
-Math.sin(yaw + Math.PI/2) * moveX * speed;
+Math.sin(yaw + Math.PI/2) * moveX * 0,5;
 
 camera.position.z +=
-Math.cos(yaw + Math.PI/2) * moveX * speed;
+Math.cos(yaw + Math.PI/2) * moveX * 0,5;
 
 for(const enemy of enemies){
 
